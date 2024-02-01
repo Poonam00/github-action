@@ -1,0 +1,22 @@
+# This is a workflow to complete practicals
+
+name: Example 1
+on: workflow_dispatch
+jobs:
+  example1:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3 
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with: 
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci 
+      - name: Run lint
+        run: npm lint
+      - name: Run tests
+        run: npm test
+      - name: Run build
+        run: npm build
