@@ -1,0 +1,10 @@
+name: handle issue
+on: issues
+jobs: 
+  print-context-event:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output the issue event context data
+        run: echo "${{ toJSON(github) }}"
+  
+  
